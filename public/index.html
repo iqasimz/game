@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Debates</title></head>
+<body>
+  <h1>1v1 Debating</h1>
+  <button id="create">Start New Debate</button>
+  <ul id="list"></ul>
+
+  <script>
+    async function load() {
+      const res = await fetch('/api/debates');
+      const debates = await res.json();
+      const ul = document.getElementById('list');
+      ul.innerHTML = debates.map(id =>
+        `<li><a href="debate.html?id=${id}">${id}</a></li>`
+      ).join('');
+    }
+    document.getElementById('create').onclick = async () => {
+      const res = await fetch('/api/debates', { method:'POST' });
+      const { id } = await res.json();
+      window.location = `debate.html?id=${id}`;
+    };
+    load();
+    setInterval(load, 5000);
+  </script>
+</body>
+</html>

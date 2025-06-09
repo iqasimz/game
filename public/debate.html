@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Debate</title></head>
+<body>
+  <h1>Debate <span id="did"></span></h1>
+  <div id="chat" style="height:300px;overflow:auto;border:1px solid #ccc; margin-bottom:1em;"></div>
+  <input id="msg" placeholder="Your argument…"/><button id="send">Send</button>
+  <button id="end" style="margin-left:1em; background:#e74c3c; color:white;">End Debate</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
