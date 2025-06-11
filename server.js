@@ -37,7 +37,7 @@ async function evaluateDebate(history) {
     .join('\n')
     + '\n\nWho wins this debate? Reply with exactly "User A" or "User B".';
 
-  console.log('Calling HF API URL:', 'https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B');
+  console.log('Calling HF API URL:', 'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3');
 
   const spinner = ora('Evaluating debate on Hugging Face...').start();
 
