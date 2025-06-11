@@ -3,7 +3,9 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const fetch = require('node-fetch');
-const ora = require('ora');
+// Handle both CJS and ESM default exports
+const _ora = require('ora');
+const ora = _ora.default || _ora;
 
 const app = express();
 const server = http.createServer(app);
